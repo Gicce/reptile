@@ -1,0 +1,69 @@
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <!-- 属性文件:在properties文件中找到对应的配置项 -->
+    <springProperty scope="context" name="logging.path" source="logging.path"/>
+    <springProperty scope="context" name="logging.level" source="logging.level.com.glmapper.spring.boot"/>
+
+    <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
+    <!--<property name="LOG_HOME" value="d:/test/" />-->
+    <!-- 控制台输出 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %green([%thread]) %highlight(%-5level) %cyan(%logger{10}) - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <appender name="GLMAPPER-LOGGERONE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>${logging.level}</level>
+        </filter>
+        <file>
+            ${logging.path}/PkuLaw-spring-boot/PkuLaw-loggerone.log
+        </file>
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--日志文件输出的文件名:按天回滚 daily -->
+            <FileNamePattern>
+                ${logging.path}/PkuLaw-spring-boot/PkuLaw-loggerone.log.%d{yyyy-MM-dd}
+            </FileNamePattern>
+            <!--日志文件保留天数-->
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 错误日志 appender ： 按照每天生成日志文件 -->
+    <appender name="ERROR-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append>
+        <!-- 过滤器，只记录 error 级别的日志 -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>error</level>
+        </filter>
+        <!-- 日志名称 -->
+        <file>${logging.path}/PkuLaw-spring-boot/PkuLaw-error.log</file>
+        <!-- 每天生成一个日志文件，保存30天的日志文件 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--日志文件输出的文件名:按天回滚 daily -->
+            <FileNamePattern>${logging.path}/PkuLaw-spring-boot/PkuLaw-error.log.%d{yyyy-MM-dd}</FileNamePattern>
+            <!--日志文件保留天数-->
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <!-- 编码 -->
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="GLMAPPER-LOGGERONE"/>
+        <appender-ref ref="ERROR-APPENDER" />
+    </root>
+</configuration>

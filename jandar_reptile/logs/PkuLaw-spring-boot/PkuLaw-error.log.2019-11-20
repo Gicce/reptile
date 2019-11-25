@@ -1,0 +1,378 @@
+2019-11-20 10:00:03.312 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.jandar.file.FileApplication.main(FileApplication.java:17)
+Caused by: java.lang.NullPointerException: null
+	at com.jandar.file.utils.OkHttpUtils.getMottoHtml(OkHttpUtils.java:169)
+	at com.jandar.file.reptile.motto.ClimbMotto.start(ClimbMotto.java:26)
+	at com.jandar.file.Application.run(Application.java:65)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:772)
+	... 5 common frames omitted
+2019-11-20 10:01:18.566 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.jandar.file.FileApplication.main(FileApplication.java:17)
+Caused by: java.lang.NullPointerException: null
+	at com.jandar.file.utils.OkHttpUtils.getMottoHtml(OkHttpUtils.java:169)
+	at com.jandar.file.reptile.motto.ClimbMotto.start(ClimbMotto.java:30)
+	at com.jandar.file.Application.run(Application.java:65)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:772)
+	... 5 common frames omitted
+2019-11-20 10:25:26.392 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.jandar.file.FileApplication.main(FileApplication.java:17)
+Caused by: java.lang.NullPointerException: null
+	at com.jandar.file.utils.OkHttpUtils.getMottoHtml(OkHttpUtils.java:169)
+	at com.jandar.file.reptile.motto.ClimbMotto.start(ClimbMotto.java:30)
+	at com.jandar.file.Application.run(Application.java:65)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:772)
+	... 5 common frames omitted
+2019-11-20 10:29:32.071 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.jandar.file.FileApplication.main(FileApplication.java:17)
+Caused by: java.lang.NullPointerException: null
+	at com.jandar.file.utils.OkHttpUtils.getMottoHtml(OkHttpUtils.java:170)
+	at com.jandar.file.reptile.motto.ClimbMotto.start(ClimbMotto.java:30)
+	at com.jandar.file.Application.run(Application.java:65)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:772)
+	... 5 common frames omitted
+2019-11-20 10:47:57.444 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.jandar.file.FileApplication.main(FileApplication.java:17)
+Caused by: java.lang.NullPointerException: null
+	at com.jandar.file.utils.OkHttpUtils.getMottoHtml(OkHttpUtils.java:170)
+	at com.jandar.file.reptile.motto.ClimbMotto.start(ClimbMotto.java:30)
+	at com.jandar.file.Application.run(Application.java:65)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:772)
+	... 5 common frames omitted
+2019-11-20 15:19:08.627 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.jandar.file.FileApplication.main(FileApplication.java:17)
+Caused by: java.util.concurrent.RejectedExecutionException: Task com.jandar.file.reptile.motto.MottoThread@3281dfc2 rejected from java.util.concurrent.ThreadPoolExecutor@377874b4[Running, pool size = 1, active threads = 1, queued tasks = 1, completed tasks = 0]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1379)
+	at com.jandar.file.reptile.motto.ClimbMotto.lambda$start$1(ClimbMotto.java:86)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at com.jandar.file.reptile.motto.ClimbMotto.start(ClimbMotto.java:84)
+	at com.jandar.file.Application.run(Application.java:65)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:772)
+	... 5 common frames omitted
+2019-11-20 15:23:49.381 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.jandar.file.FileApplication.main(FileApplication.java:17)
+Caused by: java.util.concurrent.RejectedExecutionException: Task com.jandar.file.reptile.motto.MottoThread@67d32a54 rejected from java.util.concurrent.ThreadPoolExecutor@314a31b0[Running, pool size = 1, active threads = 1, queued tasks = 1, completed tasks = 0]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1379)
+	at com.jandar.file.reptile.motto.ClimbMotto.lambda$start$1(ClimbMotto.java:86)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at com.jandar.file.reptile.motto.ClimbMotto.start(ClimbMotto.java:84)
+	at com.jandar.file.Application.run(Application.java:65)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:772)
+	... 5 common frames omitted
+2019-11-20 15:24:19.856 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.jandar.file.FileApplication.main(FileApplication.java:17)
+Caused by: java.util.concurrent.RejectedExecutionException: Task com.jandar.file.reptile.motto.MottoThread@1526f71 rejected from java.util.concurrent.ThreadPoolExecutor@49ca94a9[Running, pool size = 1, active threads = 1, queued tasks = 1, completed tasks = 0]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1379)
+	at com.jandar.file.reptile.motto.ClimbMotto.lambda$start$1(ClimbMotto.java:86)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at com.jandar.file.reptile.motto.ClimbMotto.start(ClimbMotto.java:84)
+	at com.jandar.file.Application.run(Application.java:65)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:772)
+	... 5 common frames omitted
+2019-11-20 15:27:06.050 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.jandar.file.FileApplication.main(FileApplication.java:17)
+Caused by: java.util.concurrent.RejectedExecutionException: Task com.jandar.file.reptile.motto.MottoThread@2792b416 rejected from java.util.concurrent.ThreadPoolExecutor@4735d6e5[Running, pool size = 1, active threads = 1, queued tasks = 1, completed tasks = 0]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1379)
+	at com.jandar.file.reptile.motto.ClimbMotto.lambda$start$1(ClimbMotto.java:86)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at com.jandar.file.reptile.motto.ClimbMotto.start(ClimbMotto.java:84)
+	at com.jandar.file.Application.run(Application.java:65)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:772)
+	... 5 common frames omitted
+2019-11-20 15:30:41.436 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.jandar.file.FileApplication.main(FileApplication.java:17)
+Caused by: java.util.concurrent.RejectedExecutionException: Task com.jandar.file.reptile.motto.MottoThread@36776c32 rejected from java.util.concurrent.ThreadPoolExecutor@7792d851[Running, pool size = 1, active threads = 1, queued tasks = 1, completed tasks = 0]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1379)
+	at com.jandar.file.reptile.motto.ClimbMotto.lambda$start$1(ClimbMotto.java:86)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at com.jandar.file.reptile.motto.ClimbMotto.start(ClimbMotto.java:84)
+	at com.jandar.file.Application.run(Application.java:65)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:772)
+	... 5 common frames omitted
+2019-11-20 15:31:12.619 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.jandar.file.FileApplication.main(FileApplication.java:17)
+Caused by: java.util.concurrent.RejectedExecutionException: Task com.jandar.file.reptile.motto.MottoThread@3728a578 rejected from java.util.concurrent.ThreadPoolExecutor@3e3cd6fe[Running, pool size = 1, active threads = 1, queued tasks = 1, completed tasks = 0]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1379)
+	at com.jandar.file.reptile.motto.ClimbMotto.lambda$start$1(ClimbMotto.java:86)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at com.jandar.file.reptile.motto.ClimbMotto.start(ClimbMotto.java:84)
+	at com.jandar.file.Application.run(Application.java:65)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:772)
+	... 5 common frames omitted
+2019-11-20 15:31:48.020 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.jandar.file.FileApplication.main(FileApplication.java:17)
+Caused by: java.util.concurrent.RejectedExecutionException: Task com.jandar.file.reptile.motto.MottoThread@1200458e rejected from java.util.concurrent.ThreadPoolExecutor@5fcd1c5f[Running, pool size = 1, active threads = 1, queued tasks = 1, completed tasks = 0]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1379)
+	at com.jandar.file.reptile.motto.ClimbMotto.lambda$start$1(ClimbMotto.java:86)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at com.jandar.file.reptile.motto.ClimbMotto.start(ClimbMotto.java:84)
+	at com.jandar.file.Application.run(Application.java:65)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:772)
+	... 5 common frames omitted
+2019-11-20 15:32:26.131 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.jandar.file.FileApplication.main(FileApplication.java:17)
+Caused by: java.util.concurrent.RejectedExecutionException: Task com.jandar.file.reptile.motto.MottoThread@750a04ec rejected from java.util.concurrent.ThreadPoolExecutor@49e2b3c5[Running, pool size = 1, active threads = 1, queued tasks = 1, completed tasks = 0]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1379)
+	at com.jandar.file.reptile.motto.ClimbMotto.lambda$start$1(ClimbMotto.java:86)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at com.jandar.file.reptile.motto.ClimbMotto.start(ClimbMotto.java:84)
+	at com.jandar.file.Application.run(Application.java:65)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:772)
+	... 5 common frames omitted
+2019-11-20 15:35:37.402 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.jandar.file.FileApplication.main(FileApplication.java:17)
+Caused by: java.util.concurrent.RejectedExecutionException: Task com.jandar.file.reptile.motto.MottoThread@66383c29 rejected from java.util.concurrent.ThreadPoolExecutor@7f7c420c[Running, pool size = 1, active threads = 1, queued tasks = 1, completed tasks = 0]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1379)
+	at com.jandar.file.reptile.motto.ClimbMotto.lambda$start$1(ClimbMotto.java:85)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at com.jandar.file.reptile.motto.ClimbMotto.start(ClimbMotto.java:83)
+	at com.jandar.file.Application.run(Application.java:65)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:772)
+	... 5 common frames omitted
+2019-11-20 15:37:34.389 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.jandar.file.FileApplication.main(FileApplication.java:17)
+Caused by: java.util.concurrent.RejectedExecutionException: Task com.jandar.file.reptile.motto.MottoThread@4735d6e5 rejected from java.util.concurrent.ThreadPoolExecutor@67d32a54[Running, pool size = 1, active threads = 1, queued tasks = 1, completed tasks = 0]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1379)
+	at com.jandar.file.reptile.motto.ClimbMotto.lambda$start$1(ClimbMotto.java:86)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at com.jandar.file.reptile.motto.ClimbMotto.start(ClimbMotto.java:84)
+	at com.jandar.file.Application.run(Application.java:65)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:772)
+	... 5 common frames omitted
+2019-11-20 15:37:44.064 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:37:44.112 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:38:12.336 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.jandar.file.FileApplication.main(FileApplication.java:17)
+Caused by: java.util.concurrent.RejectedExecutionException: Task com.jandar.file.reptile.motto.MottoThread@2ceca2ef rejected from java.util.concurrent.ThreadPoolExecutor@50ab56e2[Running, pool size = 1, active threads = 1, queued tasks = 1, completed tasks = 0]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1379)
+	at com.jandar.file.reptile.motto.ClimbMotto.lambda$start$1(ClimbMotto.java:86)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at com.jandar.file.reptile.motto.ClimbMotto.start(ClimbMotto.java:84)
+	at com.jandar.file.Application.run(Application.java:65)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:772)
+	... 5 common frames omitted
+2019-11-20 15:38:18.213 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:38:18.257 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:39:03.172 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.jandar.file.FileApplication.main(FileApplication.java:17)
+Caused by: java.util.concurrent.RejectedExecutionException: Task com.jandar.file.reptile.motto.MottoThread@6707a4bf rejected from java.util.concurrent.ThreadPoolExecutor@53d2d002[Running, pool size = 1, active threads = 1, queued tasks = 1, completed tasks = 0]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1379)
+	at com.jandar.file.reptile.motto.ClimbMotto.lambda$start$1(ClimbMotto.java:87)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at com.jandar.file.reptile.motto.ClimbMotto.start(ClimbMotto.java:84)
+	at com.jandar.file.Application.run(Application.java:65)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:772)
+	... 5 common frames omitted
+2019-11-20 15:39:12.649 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:39:13.132 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:42:20.129 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:42:20.181 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:42:20.227 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:42:20.265 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:42:20.303 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:42:20.333 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:42:20.363 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:42:20.394 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:42:20.422 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:46:30.526 [pool-3-thread-1] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:46:30.541 [pool-3-thread-1] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:46:30.549 [pool-3-thread-1] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:46:30.603 [pool-3-thread-1] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:46:30.615 [pool-3-thread-1] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:46:30.624 [pool-3-thread-1] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:46:30.632 [pool-3-thread-1] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:46:30.641 [pool-3-thread-1] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:46:30.650 [pool-3-thread-1] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:46:54.098 [pool-3-thread-1] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:46:54.147 [pool-3-thread-1] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:46:54.187 [pool-3-thread-1] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:46:54.222 [pool-3-thread-1] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:46:54.255 [pool-3-thread-1] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:46:54.282 [pool-3-thread-1] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:46:54.298 [pool-3-thread-1] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:46:54.388 [pool-3-thread-1] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:46:54.404 [pool-3-thread-1] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:56:35.726 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:56:35.743 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:56:35.770 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:56:35.819 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:56:36.136 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:56:36.147 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:56:36.157 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:56:36.172 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 15:56:36.220 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 16:25:27.176 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 16:25:28.772 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 16:25:30.360 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 16:25:30.811 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 16:25:32.570 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 16:25:58.755 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 16:26:00.682 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 16:26:01.910 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 16:26:02.434 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 16:26:04.310 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 16:26:29.124 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 16:26:29.441 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 16:26:29.686 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 16:26:29.886 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:09:21.127 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:09:21.569 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:09:22.207 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:09:22.301 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:09:23.137 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:30:48.425 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:30:48.972 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:31:05.391 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:31:07.279 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:31:07.872 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:31:07.977 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:31:08.509 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:31:35.554 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:31:35.698 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:31:35.837 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:31:36.024 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:31:36.878 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:31:48.711 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:31:48.801 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:31:49.204 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:31:49.286 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:55:12.116 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:55:13.242 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 17:56:43.676 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 18:11:48.437 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 18:12:11.584 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 18:12:11.712 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 18:12:12.350 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 18:12:12.447 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 18:12:13.051 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 18:12:21.945 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 18:12:22.367 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 18:12:23.047 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 18:12:23.545 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 18:17:18.889 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环
+2019-11-20 18:17:19.097 [in-thread-0] ERROR com.jandar.file.reptile.motto.ClimbMotto - 获取数据异常，跳出循环

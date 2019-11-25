@@ -1,0 +1,396 @@
+2019-11-22 11:27:02.002 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 40890 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 11:27:02.020 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 11:27:03.126 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 11:27:03.132 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 11:27:03.194 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27ms. Found 0 repository interfaces.
+2019-11-22 11:27:03.832 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.jandar.file.entity.RedisConfig$$EnhancerBySpringCGLIB$$e03ff5e6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 11:27:03.900 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$f97d5b2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 11:27:05.328 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 11:27:05.677 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 11:27:06.556 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 5.925 seconds (JVM running for 7.287)
+2019-11-22 11:27:06.962 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 11:27:06.964 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 11:27:08.316 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 11:28:02.858 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 40898 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 11:28:02.860 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 11:28:05.170 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 11:28:05.177 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 11:28:05.305 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 67ms. Found 0 repository interfaces.
+2019-11-22 11:28:05.971 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.jandar.file.entity.RedisConfig$$EnhancerBySpringCGLIB$$b9a31df9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 11:28:06.042 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$e8fafdc5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 11:28:07.491 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 11:28:07.792 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 11:28:08.895 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 6.826 seconds (JVM running for 8.123)
+2019-11-22 11:28:09.412 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 11:28:09.416 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 11:28:10.775 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 11:32:15.219 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 40920 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 11:32:15.221 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 11:32:16.831 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 11:32:16.835 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 11:32:16.907 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23ms. Found 0 repository interfaces.
+2019-11-22 11:32:17.740 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.jandar.file.entity.RedisConfig$$EnhancerBySpringCGLIB$$b9a31df9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 11:32:17.819 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$e8fafdc5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 11:32:19.375 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 11:32:19.704 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 11:32:20.631 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 5.929 seconds (JVM running for 7.174)
+2019-11-22 11:32:21.024 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 11:32:21.027 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 11:32:21.216 [main] INFO  com.jandar.file.test.SpringBootMainTest - 数据为：111
+2019-11-22 11:32:22.369 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:02:45.736 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 41825 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 15:02:45.738 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 15:02:47.426 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 15:02:47.430 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 15:02:47.585 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 128ms. Found 0 repository interfaces.
+2019-11-22 15:02:48.512 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$4bef0d68] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 15:02:50.620 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:02:50.965 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 15:02:51.558 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 7.226 seconds (JVM running for 11.068)
+2019-11-22 15:02:51.930 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 15:02:51.931 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 15:02:52.175 [main] INFO  com.jandar.file.test.SpringBootMainTest - 陈总
+2019-11-22 15:02:52.187 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:05:42.621 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 41872 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 15:05:42.623 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 15:05:43.977 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 15:05:43.980 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 15:05:44.024 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23ms. Found 0 repository interfaces.
+2019-11-22 15:05:44.699 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$e11e8bed] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 15:05:46.466 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:05:46.667 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 15:05:47.166 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 5.237 seconds (JVM running for 6.469)
+2019-11-22 15:05:47.571 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 15:05:47.572 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 15:05:47.827 [main] INFO  com.jandar.file.test.SpringBootMainTest - 陈总
+2019-11-22 15:05:47.832 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-1
+2019-11-22 15:05:47.849 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:12:34.867 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 41943 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 15:12:34.869 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 15:12:35.943 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 15:12:35.952 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 15:12:36.049 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58ms. Found 0 repository interfaces.
+2019-11-22 15:12:37.203 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$2fa56bbf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 15:12:39.130 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:12:39.368 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 15:12:39.860 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 5.51 seconds (JVM running for 6.759)
+2019-11-22 15:12:40.763 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 15:12:40.765 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 15:12:41.004 [main] INFO  com.jandar.file.test.SpringBootMainTest - 陈总
+2019-11-22 15:12:41.008 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间: -1
+2019-11-22 15:12:41.022 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:13:02.420 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 41945 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 15:13:02.421 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 15:13:03.761 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 15:13:03.764 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 15:13:03.818 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24ms. Found 0 repository interfaces.
+2019-11-22 15:13:04.566 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$4bef0d68] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 15:13:06.209 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:13:06.489 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 15:13:07.001 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 5.34 seconds (JVM running for 6.589)
+2019-11-22 15:13:07.358 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 15:13:07.359 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 15:13:07.618 [main] INFO  com.jandar.file.test.SpringBootMainTest - 陈总
+2019-11-22 15:13:07.621 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间: -1
+2019-11-22 15:13:07.640 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:13:21.091 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 41947 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 15:13:21.092 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 15:13:22.408 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 15:13:22.412 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 15:13:22.449 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21ms. Found 0 repository interfaces.
+2019-11-22 15:13:23.158 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$76469ea8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 15:13:24.792 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:13:25.003 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 15:13:25.521 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 5.255 seconds (JVM running for 6.394)
+2019-11-22 15:13:25.908 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 15:13:25.910 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 15:13:26.155 [main] INFO  com.jandar.file.test.SpringBootMainTest - 陈总
+2019-11-22 15:13:26.169 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间: 9
+2019-11-22 15:13:26.191 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:14:35.744 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 41953 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 15:14:35.746 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 15:14:37.601 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 15:14:37.605 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 15:14:37.659 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29ms. Found 0 repository interfaces.
+2019-11-22 15:14:38.639 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$2fa56bbf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 15:14:40.423 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:14:40.715 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 15:14:41.229 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 6.267 seconds (JVM running for 7.539)
+2019-11-22 15:14:41.670 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 15:14:41.672 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 15:14:41.917 [main] INFO  com.jandar.file.test.SpringBootMainTest - 陈总
+2019-11-22 15:14:41.928 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间: 9
+2019-11-22 15:14:41.945 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:14:56.651 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 41955 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 15:14:56.657 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 15:14:57.994 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 15:14:57.998 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 15:14:58.070 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44ms. Found 0 repository interfaces.
+2019-11-22 15:14:58.794 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$1b7f45b0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 15:15:00.600 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:15:00.848 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 15:15:01.353 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 5.51 seconds (JVM running for 6.681)
+2019-11-22 15:15:01.718 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 15:15:01.719 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 15:15:01.964 [main] INFO  com.jandar.file.test.SpringBootMainTest - 陈总
+2019-11-22 15:15:01.973 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间: 9
+2019-11-22 15:15:02.979 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间: 8
+2019-11-22 15:15:03.986 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间: 7
+2019-11-22 15:15:04.997 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间: 6
+2019-11-22 15:15:06.003 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间: 5
+2019-11-22 15:15:07.009 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间: 4
+2019-11-22 15:15:08.015 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间: 3
+2019-11-22 15:15:09.022 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间: 2
+2019-11-22 15:15:10.026 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间: 1
+2019-11-22 15:15:11.033 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间: 0
+2019-11-22 15:15:11.048 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:15:59.194 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 41958 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 15:15:59.195 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 15:16:00.125 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 15:16:00.127 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 15:16:00.169 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22ms. Found 0 repository interfaces.
+2019-11-22 15:16:00.796 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$dd2433a6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 15:16:02.484 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:16:03.169 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 15:16:04.042 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 5.343 seconds (JVM running for 6.499)
+2019-11-22 15:16:04.470 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 15:16:04.472 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 15:16:04.747 [main] INFO  com.jandar.file.test.SpringBootMainTest - 陈总
+2019-11-22 15:16:04.757 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:9,数据:陈总 
+2019-11-22 15:16:05.767 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:8,数据:陈总 
+2019-11-22 15:16:06.770 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:7,数据:陈总 
+2019-11-22 15:16:07.775 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:6,数据:陈总 
+2019-11-22 15:16:08.781 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:5,数据:陈总 
+2019-11-22 15:16:09.788 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:4,数据:陈总 
+2019-11-22 15:16:10.795 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:3,数据:陈总 
+2019-11-22 15:16:11.803 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:2,数据:陈总 
+2019-11-22 15:16:12.807 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:1,数据:陈总 
+2019-11-22 15:16:13.811 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:0,数据:陈总 
+2019-11-22 15:16:14.857 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:17:47.327 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 41965 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 15:17:47.330 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 15:17:48.727 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 15:17:48.732 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 15:17:48.789 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35ms. Found 0 repository interfaces.
+2019-11-22 15:17:49.468 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$a8b2b489] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 15:17:51.226 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:17:51.504 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 15:17:52.076 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 5.555 seconds (JVM running for 6.746)
+2019-11-22 15:17:52.493 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 15:17:52.495 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 15:17:52.733 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:9,数据:陈总 
+2019-11-22 15:17:53.744 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:8,数据:陈总 
+2019-11-22 15:17:54.751 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:7,数据:陈总 
+2019-11-22 15:17:55.758 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:6,数据:陈总 
+2019-11-22 15:17:56.762 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:5,数据:陈总 
+2019-11-22 15:17:57.767 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:4,数据:陈总 
+2019-11-22 15:17:58.774 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:3,数据:陈总 
+2019-11-22 15:17:59.777 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:2,数据:陈总 
+2019-11-22 15:18:00.779 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:1,数据:陈总 
+2019-11-22 15:18:01.782 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:0,数据:陈总 
+2019-11-22 15:18:02.786 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:03.790 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:04.794 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:05.798 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:06.801 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:07.810 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:08.812 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:09.819 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:10.823 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:11.829 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:12.836 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:13.840 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:14.845 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:15.854 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:16.863 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:17.872 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:18.879 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:19.883 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:20.888 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:21.895 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:22.900 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:18:23.701 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:22:48.410 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 41997 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 15:22:48.413 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 15:22:49.400 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 15:22:49.405 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 15:22:49.452 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24ms. Found 0 repository interfaces.
+2019-11-22 15:22:50.099 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$7de2b3c7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 15:22:53.063 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:22:53.451 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 15:22:54.103 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 6.225 seconds (JVM running for 7.592)
+2019-11-22 15:22:54.638 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 15:22:54.640 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 15:22:54.890 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:9,数据:陈总 
+2019-11-22 15:22:55.901 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:8,数据:陈总 
+2019-11-22 15:22:56.908 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:7,数据:陈总 
+2019-11-22 15:22:57.914 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:6,数据:陈总 
+2019-11-22 15:22:58.920 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:5,数据:陈总 
+2019-11-22 15:22:59.925 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:4,数据:陈总 
+2019-11-22 15:23:00.934 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:3,数据:陈总 
+2019-11-22 15:23:01.940 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:2,数据:陈总 
+2019-11-22 15:23:02.946 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:1,数据:陈总 
+2019-11-22 15:23:03.951 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:0,数据:陈总 
+2019-11-22 15:23:04.958 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:05.964 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:06.969 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:07.975 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:08.981 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:09.988 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:11.007 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:12.013 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:13.020 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:14.025 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:15.032 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:16.034 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:17.045 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:17.391 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:23:31.566 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 42002 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 15:23:31.571 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 15:23:32.846 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 15:23:32.855 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 15:23:32.896 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23ms. Found 0 repository interfaces.
+2019-11-22 15:23:33.608 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$2fa56bbf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 15:23:35.239 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:23:35.475 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 15:23:35.959 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 5.753 seconds (JVM running for 7.339)
+2019-11-22 15:23:36.317 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 15:23:36.319 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 15:23:36.586 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:9,数据:陈总 
+2019-11-22 15:23:37.589 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:8,数据:陈总 
+2019-11-22 15:23:38.594 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:7,数据:陈总 
+2019-11-22 15:23:39.597 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:6,数据:陈总 
+2019-11-22 15:23:40.604 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:5,数据:陈总 
+2019-11-22 15:23:41.607 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:4,数据:陈总 
+2019-11-22 15:23:42.612 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:3,数据:陈总 
+2019-11-22 15:23:43.618 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:2,数据:陈总 
+2019-11-22 15:23:44.624 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:1,数据:陈总 
+2019-11-22 15:23:45.635 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:0,数据:陈总 
+2019-11-22 15:23:46.641 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:47.646 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:48.663 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:49.668 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:50.671 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:51.674 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:52.679 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:53.684 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:54.689 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:55.693 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:56.699 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:57.700 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:58.707 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:23:59.713 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:24:00.720 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:24:01.722 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:24:02.728 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:24:03.734 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:24:03.926 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:42:58.535 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 42082 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 15:42:58.619 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 15:42:59.904 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 15:42:59.908 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 15:42:59.949 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23ms. Found 0 repository interfaces.
+2019-11-22 15:43:00.624 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$65e38a4b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 15:43:02.365 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:43:02.641 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 15:43:03.220 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 5.607 seconds (JVM running for 6.856)
+2019-11-22 15:43:03.660 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 15:43:03.662 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 15:43:03.958 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:9,数据:陈总 
+2019-11-22 15:43:04.962 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:8,数据:陈总 
+2019-11-22 15:43:05.969 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:7,数据:陈总 
+2019-11-22 15:43:06.975 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:6,数据:陈总 
+2019-11-22 15:43:07.981 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:5,数据:陈总 
+2019-11-22 15:43:08.984 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:4,数据:陈总 
+2019-11-22 15:43:09.990 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:3,数据:陈总 
+2019-11-22 15:43:10.992 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:2,数据:陈总 
+2019-11-22 15:43:11.994 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:1,数据:陈总 
+2019-11-22 15:43:13.002 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:0,数据:陈总 
+2019-11-22 15:43:14.007 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:43:14.007 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:43:14.020 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:43:38.975 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 42084 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 15:43:38.977 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 15:43:40.508 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 15:43:40.513 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 15:43:40.558 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25ms. Found 0 repository interfaces.
+2019-11-22 15:43:41.347 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$50ccd647] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 15:43:42.966 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:43:43.206 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 15:43:43.682 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 5.518 seconds (JVM running for 6.947)
+2019-11-22 15:43:44.095 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 15:43:44.097 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 15:43:44.371 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:9,数据:陈总 
+2019-11-22 15:43:45.377 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:8,数据:陈总 
+2019-11-22 15:43:46.381 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:7,数据:陈总 
+2019-11-22 15:43:47.388 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:6,数据:陈总 
+2019-11-22 15:43:48.395 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:5,数据:陈总 
+2019-11-22 15:43:49.401 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:4,数据:陈总 
+2019-11-22 15:43:50.407 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:3,数据:陈总 
+2019-11-22 15:43:51.414 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:2,数据:陈总 
+2019-11-22 15:43:52.419 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:1,数据:陈总 
+2019-11-22 15:43:53.422 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:0,数据:陈总 
+2019-11-22 15:43:54.428 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:43:54.428 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:陈总 
+2019-11-22 15:43:54.447 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:46:49.654 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 42124 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 15:46:49.671 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 15:46:51.243 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 15:46:51.247 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 15:46:51.298 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27ms. Found 0 repository interfaces.
+2019-11-22 15:46:52.040 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$c98a45e0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 15:46:53.985 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:46:54.352 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 15:46:54.892 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 5.916 seconds (JVM running for 7.198)
+2019-11-22 15:46:55.315 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 15:46:55.319 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 15:46:55.566 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:9,数据:111 
+2019-11-22 15:46:56.571 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:8,数据:111 
+2019-11-22 15:46:57.576 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:7,数据:111 
+2019-11-22 15:46:58.581 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:6,数据:111 
+2019-11-22 15:46:59.586 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:5,数据:111 
+2019-11-22 15:47:00.592 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:4,数据:111 
+2019-11-22 15:47:01.600 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:3,数据:111 
+2019-11-22 15:47:02.605 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:2,数据:111 
+2019-11-22 15:47:03.611 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:1,数据:111 
+2019-11-22 15:47:04.618 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:0,数据:111 
+2019-11-22 15:47:05.622 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:111 
+2019-11-22 15:47:05.622 [main] INFO  com.jandar.file.test.SpringBootMainTest - 过期时间:-2,数据:111 
+2019-11-22 15:47:05.641 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:47:30.268 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 42130 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 15:47:30.269 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 15:47:31.698 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 15:47:31.703 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 15:47:31.757 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32ms. Found 0 repository interfaces.
+2019-11-22 15:47:32.484 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$c98a45e0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 15:47:34.074 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:47:34.438 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 15:47:35.071 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 5.983 seconds (JVM running for 7.626)
+2019-11-22 15:47:35.417 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 15:47:35.419 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 15:47:35.625 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:48:19.747 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 42136 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 15:48:19.754 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 15:48:21.603 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 15:48:21.609 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 15:48:21.696 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62ms. Found 0 repository interfaces.
+2019-11-22 15:48:22.538 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$a8b2b489] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 15:48:24.336 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:48:24.557 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 15:48:25.043 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 6.095 seconds (JVM running for 7.221)
+2019-11-22 15:48:25.403 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 15:48:25.405 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 15:48:25.613 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:56:50.125 [main] INFO  com.jandar.file.test.SpringBootMainTest - Starting SpringBootMainTest on ip-192-68-69-110.ptr.bcit.ca with PID 42181 (started by gaochenyang in /Users/gaochenyang/jandar 爬虫/爬虫版本-v.8/jandar_reptile)
+2019-11-22 15:56:50.129 [main] INFO  com.jandar.file.test.SpringBootMainTest - No active profile set, falling back to default profiles: default
+2019-11-22 15:56:51.258 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 15:56:51.262 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 15:56:51.304 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23ms. Found 0 repository interfaces.
+2019-11-22 15:56:51.860 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$559794d3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 15:56:53.677 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 15:56:53.914 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-22 15:56:54.451 [main] INFO  com.jandar.file.test.SpringBootMainTest - Started SpringBootMainTest in 5.187 seconds (JVM running for 6.502)
+2019-11-22 15:56:54.921 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 15:56:54.922 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 15:56:57.194 [main] INFO  com.jandar.file.test.SpringBootMainTest - 2
+2019-11-22 15:56:57.204 [Thread-2] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
