@@ -1,6 +1,5 @@
 package com.jandar.file.reptile.pkulaw;
 
-
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.jandar.file.Application;
@@ -20,25 +19,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.regex.Pattern;
 
-/**
- * @description: 北大法宝普通案例
- * @author: Mr.Gao
- * @create: 2019-10--16 15:45
- **/
 @Slf4j
 @Component
-public class PkuLawPt {
+public class PkulawCJ {
 
     @Value("${createThreadSize}")
     private String createThreadSize;
@@ -65,7 +56,7 @@ public class PkuLawPt {
 
     public void startup() {
         Logger log = LoggerFactory.getLogger(Application.class);
-        log.info("法宝-开始发布任务");
+        log.info("法宝-裁决-开始发布任务");
         int total = Integer.parseInt(createThreadSize + processThreadSize);
         BlockingQueue<String> smallUrlQueue = new LinkedBlockingDeque<>();
 
@@ -76,7 +67,7 @@ public class PkuLawPt {
 
         List<PageThread> pageThreads = new ArrayList<>();
         //修改
-        Map<String, String> data = getMoMate(whileGetHtml(okHttpUtils.getPTHomeHtml(bfdate, efdate)));
+        Map<String, String> data = getMoMate(whileGetHtml(okHttpUtils.getCjHtml()));
         //间隔
         int offsetPage = Integer.parseInt(Pattern.compile("[^0-9]").matcher(data.get("title")).replaceAll("")) / 40 + 1;
         //开始页数
@@ -181,6 +172,4 @@ public class PkuLawPt {
         date.put("code", code);
         return date;
     }
-
-
 }

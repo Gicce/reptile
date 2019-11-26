@@ -117,6 +117,32 @@ public class OkHttpUtils {
         }
     }
 
+    public String getBDHtml(String bfdate) {
+        String url = "http://143.80.1.92:8267/SearchResult.aspx?k=0";
+        try {
+            RequestBody body = new FormBody.Builder()
+                    .add("ckbchoose", "1")
+                    .add("rdoType", "1")
+                    .add("SearchSort", "1")
+                    .add("db", "pal")
+                    .add("menuname", "case")
+                    .add("chkIsSummary", "1")
+                    .add("WebUCSearchFrom1$check_gaojijs", "1")
+                    .add("bfdate", bfdate)
+                    .build();
+            Request request = new Request.Builder()
+                    .post(body)
+                    .url(url)
+                    .build();
+            Call call = client.newCall(request);
+            Response response = call.execute();
+            return response.body() != null ? response.body().string() : null;
+        } catch (Exception e) {
+            log.error("页面请求报错: " + e.toString());
+            return "";
+        }
+    }
+
     public String getPTHTml(int pageNo, String w) {
         String url = "http://143.80.1.92:8267/SearchResult.aspx?t=1&p=" + pageNo + "&ix=0&w=" + w;
         try {
@@ -166,6 +192,6 @@ public class OkHttpUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return  response.body() != null ? new String(response.body().bytes(),"gb2312") : null;
+        return response.body() != null ? new String(response.body().bytes(), "gb2312") : null;
     }
 }

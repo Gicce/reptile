@@ -2,17 +2,16 @@ package com.jandar.file.reptile.motto;
 
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import com.jandar.file.utils.HtmlUtils;
-import com.jandar.file.utils.OkHttpUtils;
-import com.jandar.file.utils.PkulawContent;
-import com.jandar.file.utils.RedisUtil;
+import com.jandar.file.utils.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -38,11 +37,15 @@ public class ClimbMotto {
     private PkulawContent content;
     @Autowired
     private RedisUtil redisUtil;
+    @Autowired
+    private IpConfiguration ipConfiguration;
+
     private final String MOTTO_URL = "https://www.geyanw.com/";
 
     public void start() {
         log.info("格言网爬虫启动,地址:{}", "https://www.geyanw.com/");
-        redisUtil.incr("Reptile",1);
+        Map<String, Object> result = new HashMap<>();
+        redisUtil.incr("Reptile", 1);
         String mottoHtml = null;
         try {
             mottoHtml = okHttpUtils.getMottoHtml(MOTTO_URL);
@@ -62,6 +65,7 @@ public class ClimbMotto {
         ExecutorService proDukTionPools = new ThreadPoolExecutor(createSize, createSize, 0,
                 TimeUnit.MILLISECONDS, new LinkedBlockingDeque<>(10), threadFactory, new ThreadPoolExecutor.AbortPolicy());
         CountDownLatch downLatch = new CountDownLatch(total);
+        result.put("threadPoolSize", total);
 
         MottoThread.MottoCallback mottoCallback = (url, inSmallUrlQueue) -> {
             try {
@@ -106,7 +110,7 @@ public class ClimbMotto {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-            }finally {
+            } finally {
                 downLatch.countDown();
             }
         };

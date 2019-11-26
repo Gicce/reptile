@@ -22,9 +22,9 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
 
-@Component
 @Slf4j
-public class PkulawJX {
+@Component
+public class PkulawBD {
 
     @Value("${createThreadSize}")
     private String createThreadSize;
@@ -111,8 +111,9 @@ public class PkulawJX {
     }
 
     public void status() {
+        log.info("法宝-报道-开始发布任务");
         BlockingQueue<String> smallUrlQueue = new LinkedBlockingDeque<>();
-        String pageHomeHtml = okHttpUtils.getJxHtml(bfdate);
+        String pageHomeHtml = okHttpUtils.getBDHtml(bfdate);
         int total = Integer.parseInt(processThreadSize);
         int createSize = Integer.parseInt(createThreadSize);
         if (StringUtils.isBlank(pageHomeHtml)) {
@@ -140,8 +141,8 @@ public class PkulawJX {
                     if (!smallUrlQueue.isEmpty()) {
                         String url = smallUrlQueue.poll();
                         if (url != null) {
-                            List<JSONObject> contentPkulawHtml = new ArrayList<>();
-                            List<ContentPkulawV1> contentPkulawV1s = new ArrayList<>();
+                             List<JSONObject> contentPkulawHtml = new ArrayList<>();
+                              List<ContentPkulawV1> contentPkulawV1s = new ArrayList<>();
                             contentPkulawV1s.add(content.contentPkulawV1s(content.getContent(contentPkulawHtml, okHttpUtils.getHTml(url), url)));
                             sqlUtils.insertHtml(contentPkulawHtml);
                             sqlUtils.insertList(contentPkulawV1s);
