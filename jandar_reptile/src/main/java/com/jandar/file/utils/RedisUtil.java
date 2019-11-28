@@ -1,10 +1,14 @@
 package com.jandar.file.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.Cursor;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ScanOptions;
+import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -14,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class RedisUtil {
 
     @Autowired
-    private RedisTemplate<String, Object> redisTemplate;
+    private RedisTemplate<String, String> redisTemplate;
 
     /**
      * 指定缓存失效时间
@@ -93,7 +97,7 @@ public class RedisUtil {
      * @param value 值
      * @return true成功 false失败
      */
-    public boolean set(String key, Object value) {
+    public boolean set(String key, String value) {
         try {
             redisTemplate.opsForValue().set(key, value);
             return true;
@@ -111,7 +115,7 @@ public class RedisUtil {
      * @param time  时间(秒) time要大于0 如果time小于等于0 将设置无限期
      * @return true成功 false 失败
      */
-    public boolean set(String key, Object value, long time) {
+    public boolean set(String key, String value, long time) {
         try {
             if (time > 0) {
                 redisTemplate.opsForValue().set(key, value, time, TimeUnit.SECONDS);
@@ -170,7 +174,7 @@ public class RedisUtil {
      * @param key 键
      * @return 对应的多个键值
      */
-    public Map<Object, Object> hmget(String key) {
+    public Map hmget(String key) {
         return redisTemplate.opsForHash().entries(key);
     }
 
@@ -181,7 +185,7 @@ public class RedisUtil {
      * @param map 对应多个键值
      * @return true 成功 false 失败
      */
-    public boolean hmset(String key, Map<String, Object> map) {
+    public boolean hmset(String key, Map<Object, Object> map) {
         try {
             redisTemplate.opsForHash().putAll(key, map);
             return true;
@@ -303,7 +307,7 @@ public class RedisUtil {
      * @param key 键
      * @return
      */
-    public Set<Object> sGet(String key) {
+    public Set<String> sGet(String key) {
         try {
             return redisTemplate.opsForSet().members(key);
         } catch (Exception e) {
@@ -335,7 +339,7 @@ public class RedisUtil {
      * @param values 值 可以是多个
      * @return 成功个数
      */
-    public long sSet(String key, Object... values) {
+    public long sSet(String key, String... values) {
         try {
             return redisTemplate.opsForSet().add(key, values);
         } catch (Exception e) {
@@ -352,17 +356,17 @@ public class RedisUtil {
      * @param values 值 可以是多个
      * @return 成功个数
      */
-    public long sSetAndTime(String key, long time, Object... values) {
-        try {
-            Long count = redisTemplate.opsForSet().add(key, values);
-            if (time > 0)
-                expire(key, time);
-            return count;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return 0;
-        }
-    }
+//    public long sSetAndTime(String key, long time, Object... values) {
+//        try {
+//            Long count = redisTemplate.opsForSet().add(key, values);
+//            if (time > 0)
+//                expire(key, time);
+//            return count;
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return 0;
+//        }
+//    }
 
     /**
      * 获取set缓存的长度
@@ -405,7 +409,7 @@ public class RedisUtil {
      * @param end   结束 0 到 -1代表所有值
      * @return
      */
-    public List<Object> lGet(String key, long start, long end) {
+    public List<String> lGet(String key, long start, long end) {
         try {
             return redisTemplate.opsForList().range(key, start, end);
         } catch (Exception e) {
@@ -452,7 +456,7 @@ public class RedisUtil {
      * @param value 值
      * @return
      */
-    public boolean lSet(String key, Object value) {
+    public boolean lSet(String key, String value) {
         try {
             redisTemplate.opsForList().rightPush(key, value);
             return true;
@@ -470,7 +474,7 @@ public class RedisUtil {
      * @param time  时间(秒)
      * @return
      */
-    public boolean lSet(String key, Object value, long time) {
+    public boolean lSet(String key, String value, long time) {
         try {
             redisTemplate.opsForList().rightPush(key, value);
             if (time > 0)
@@ -489,7 +493,7 @@ public class RedisUtil {
      * @param value 值
      * @return
      */
-    public boolean lSet(String key, List<Object> value) {
+    public boolean lSet(String key, List<String> value) {
         try {
             redisTemplate.opsForList().rightPushAll(key, value);
             return true;
@@ -507,7 +511,7 @@ public class RedisUtil {
      * @param time  时间(秒)
      * @return
      */
-    public boolean lSet(String key, List<Object> value, long time) {
+    public boolean lSet(String key, List<String> value, long time) {
         try {
             redisTemplate.opsForList().rightPushAll(key, value);
             if (time > 0)
@@ -527,7 +531,7 @@ public class RedisUtil {
      * @param value 值
      * @return
      */
-    public boolean lUpdateIndex(String key, long index, Object value) {
+    public boolean lUpdateIndex(String key, long index, String value) {
         try {
             redisTemplate.opsForList().set(key, index, value);
             return true;
@@ -553,5 +557,60 @@ public class RedisUtil {
             e.printStackTrace();
             return 0;
         }
+    }
+
+    /**
+     * 增加元素的score值，并返回增加后的值
+     *
+     * @param key
+     * @param value
+     * @param score
+     * @return
+     */
+    public Double incrementScore(String key, String value, double score) {
+        return redisTemplate.opsForZSet().incrementScore(key, value, score);
+    }
+
+    /**
+     * 获取指定成员的score值
+     *
+     * @param key
+     * @param value
+     * @return
+     */
+    public double getScore(String key, String value) {
+        Double d = redisTemplate.opsForZSet().score(key, value);
+        return d != null ? d : 0;
+    }
+
+    /**
+     * 遍历zset中的score
+     *
+     * @param key
+     * @return score list
+     */
+    public List<Double> scanScore(String key) {
+        List list = new ArrayList();
+        Cursor<ZSetOperations.TypedTuple<String>> cursor = redisTemplate.opsForZSet().scan(key, ScanOptions.NONE);
+        while (cursor.hasNext()) {
+            ZSetOperations.TypedTuple<String> item = cursor.next();
+            list.add(item.getScore());
+        }
+        return list;
+    }
+
+    /**
+     * 计算zset中score值的和
+     *
+     * @param key
+     * @return
+     */
+    public double getZsetScoreSum(String key) {
+        List<Double> scores = scanScore(key);
+        double scoreSum = 0;
+        if (scores != null && scores.size() > 0) {
+            scoreSum = scores.stream().reduce((sum, cost) -> sum + cost).get();
+        }
+        return scoreSum;
     }
 }

@@ -46,4 +46,14 @@ public class CalendarUtils {
         Calendar calendar = Calendar.getInstance();
         return new SimpleDateFormat("yyyy-MM-dd").format(calendar.getTime());
     }
+
+    /**
+     * 获取月和日
+     *
+     * @return
+     */
+    public String getMMDD() {
+        Calendar calendar = Calendar.getInstance();
+        return calendar.get(Calendar.MONTH) + 1 + "" + calendar.get(Calendar.DAY_OF_MONTH);
+    }
 }

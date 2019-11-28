@@ -22,6 +22,8 @@ public class SqlUtils {
     private String ContentTable;
     @Value("${htmlTable}")
     private String HtmlTable;
+    @Value("${libraryName}")
+    private String LibraryName;
 
     /**
      * 数据库insert 插入
@@ -93,7 +95,7 @@ public class SqlUtils {
     }
 
     public synchronized int[] insertMottoList(List<JSONObject> list) {
-        String sql = "insert into t_motto (type_one,type_two,content,sequence,release_time,create_time) value (?,?,?,'0',?,SYSDATE());";
+        String sql = "insert into " + ContentTable + " (type_one,type_two,content,sequence,release_time,create_time) value (?,?,?,'0',?,SYSDATE());";
         int[] result = PkulawDataUtils.getJdbcTemplate().batchUpdate(sql, new BatchPreparedStatementSetter() {
             @Override
             public void setValues(PreparedStatement preparedStatement, int i) throws SQLException {
@@ -102,7 +104,7 @@ public class SqlUtils {
                 preparedStatement.setString(1, jsonObject.getString("type_one"));
                 preparedStatement.setString(2, jsonObject.getString("type_two"));
                 preparedStatement.setString(3, jsonObject.getString("content"));
-                preparedStatement.setDate(4,new java.sql.Date(jsonObject.getDate("release_time").getTime()));
+                preparedStatement.setDate(4, new java.sql.Date(jsonObject.getDate("release_time").getTime()));
             }
 
             @Override
@@ -111,6 +113,16 @@ public class SqlUtils {
             }
         });
         return result;
+    }
+
+    public int ReturnRows() {
+        String sql = "select table_rows from information_schema.tables where table_schema='" + LibraryName + "' AND table_name = '" + ContentTable + "';";
+        try {
+            return PkulawDataUtils.getJdbcTemplate().queryForObject(sql, Integer.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
     }
 
 }

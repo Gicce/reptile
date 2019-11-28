@@ -16,7 +16,6 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 /**
  * @description: Html解析
@@ -34,6 +33,10 @@ public class HtmlUtils {
     private CalendarUtils calendarUtils;
     @Autowired
     private SqlUtils sqlUtils;
+    @Autowired
+    private RedisUtil redisUtil;
+    @Autowired
+    private IpConfiguration ipConfiguration;
 
     public List<String> analysisMottoHtml(String html) {
         Element motto = Jsoup.parse(html);
@@ -81,7 +84,9 @@ public class HtmlUtils {
             mottos.put("type_two", type_two);
             mottos.put("content", content.MatcherON_getString(item.html(), "[、.^(?!0)(?:[0-9]{1,3}|1000)$]"));
             list.add(mottos);
+            redisUtil.incrementScore("reptileData" + ipConfiguration.getPort(), calendarUtils.getMMDD(), 1);
         });
+
         sqlUtils.insertMottoList(list);
     }
 

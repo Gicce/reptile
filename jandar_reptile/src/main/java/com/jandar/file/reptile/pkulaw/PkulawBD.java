@@ -141,8 +141,8 @@ public class PkulawBD {
                     if (!smallUrlQueue.isEmpty()) {
                         String url = smallUrlQueue.poll();
                         if (url != null) {
-                             List<JSONObject> contentPkulawHtml = new ArrayList<>();
-                              List<ContentPkulawV1> contentPkulawV1s = new ArrayList<>();
+                            List<JSONObject> contentPkulawHtml = new ArrayList<>();
+                            List<ContentPkulawV1> contentPkulawV1s = new ArrayList<>();
                             contentPkulawV1s.add(content.contentPkulawV1s(content.getContent(contentPkulawHtml, okHttpUtils.getHTml(url), url)));
                             sqlUtils.insertHtml(contentPkulawHtml);
                             sqlUtils.insertList(contentPkulawV1s);
@@ -157,8 +157,6 @@ public class PkulawBD {
                         pageNo.set(0);
                         break;
                     }
-
-
                 }
             } catch (Exception e) {
                 e.printStackTrace();

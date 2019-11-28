@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -28,13 +27,10 @@ public class ClimbMotto {
     private String createThreadSize;
     @Value("${processThreadSize}")
     private String processThreadSize;
-
     @Autowired
     private OkHttpUtils okHttpUtils;
     @Autowired
     private HtmlUtils htmlUtils;
-    @Autowired
-    private PkulawContent content;
     @Autowired
     private RedisUtil redisUtil;
     @Autowired
@@ -43,9 +39,9 @@ public class ClimbMotto {
     private final String MOTTO_URL = "https://www.geyanw.com/";
 
     public void start() {
+        final int PORT = ipConfiguration.getPort();
         log.info("格言网爬虫启动,地址:{}", "https://www.geyanw.com/");
-        Map<String, Object> result = new HashMap<>();
-        redisUtil.incr("Reptile", 1);
+        redisUtil.incr("Reptile" + PORT, 1);
         String mottoHtml = null;
         try {
             mottoHtml = okHttpUtils.getMottoHtml(MOTTO_URL);
@@ -59,13 +55,18 @@ public class ClimbMotto {
         int processSize = Integer.parseInt(processThreadSize);
         //总线程数
         int total = createSize + processSize;
+        Map<Object, Object> result = new HashMap<>();
+        result.put("allDataCount", "0");
+        result.put("threadPoolSize", String.valueOf(total));
+        result.put("proxyUseRate", "1");
+        redisUtil.hmset(String.valueOf(PORT), result);
+        redisUtil.set("mottoCallback", "1");
         ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("in-thread-%d").build();
         ExecutorService mulThreadPools = new ThreadPoolExecutor(processSize, processSize, 0,
                 TimeUnit.MILLISECONDS, new LinkedBlockingDeque<>(processSize), threadFactory, new ThreadPoolExecutor.AbortPolicy());
         ExecutorService proDukTionPools = new ThreadPoolExecutor(createSize, createSize, 0,
                 TimeUnit.MILLISECONDS, new LinkedBlockingDeque<>(10), threadFactory, new ThreadPoolExecutor.AbortPolicy());
         CountDownLatch downLatch = new CountDownLatch(total);
-        result.put("threadPoolSize", total);
 
         MottoThread.MottoCallback mottoCallback = (url, inSmallUrlQueue) -> {
             try {
@@ -73,9 +74,11 @@ public class ClimbMotto {
                 while (true) {
                     String htmlList = okHttpUtils.getMottoHtml(url + htmlUtils.getUrl(url) + mottoPage.addAndGet(1) + ".html");
                     if (htmlUtils.analyseHtml(htmlList, inSmallUrlQueue)) {
+
                         log.info("当前队列:{}", inSmallUrlQueue.size());
                     } else {
                         log.error("获取数据异常，跳出循环");
+                        redisUtil.set("mottoCallback", "0");
                         break;
                     }
 
@@ -87,11 +90,14 @@ public class ClimbMotto {
             }
         };
 
-
+        //爬取的数据。
         Runnable runnable = () -> {
             try {
-                AtomicInteger pageNo = new AtomicInteger(0);
                 while (true) {
+                    if (redisUtil.get("mottoCallback").equals("0") && smallUrlQueue.isEmpty()) {
+                        log.info("完事了");
+                        break;
+                    }
                     if (!smallUrlQueue.isEmpty()) {
                         String url = smallUrlQueue.poll();
                         if (url != null) {
@@ -101,11 +107,6 @@ public class ClimbMotto {
                     } else {
                         log.info("队列为空，等待{}ms", 2);
                         Thread.sleep(200);
-                        pageNo.addAndGet(1);
-                    }
-                    if (pageNo.get() > 100) {
-                        pageNo.set(0);
-                        break;
                     }
                 }
             } catch (Exception e) {
@@ -122,10 +123,12 @@ public class ClimbMotto {
         for (int i = 0; i < processSize; i++) {
             mulThreadPools.execute(runnable);
         }
+
         try {
             downLatch.await();
             proDukTionPools.shutdown();
             mulThreadPools.shutdown();
+            redisUtil.decr("Reptile" + ipConfiguration.getPort(), 1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
