@@ -4,14 +4,11 @@ import com.jandar.file.tool.CalendarUtils;
 import com.jandar.file.utils.IpConfiguration;
 import com.jandar.file.utils.RedisUtil;
 import com.jandar.file.utils.SqlUtils;
-import io.swagger.models.auth.In;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.InjectionPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.DecimalFormat;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -81,7 +78,7 @@ public class IMSReptileCurrentIFS {
             log.error("数据还未导入,请等待1小时后重试");
             return 1;
         }
-        return Integer.parseInt(data) * 60 * 24;
+        return Double.valueOf(data).intValue() * 60 * 24;
     }
 
     /**

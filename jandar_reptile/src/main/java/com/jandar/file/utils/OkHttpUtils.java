@@ -19,10 +19,10 @@ import java.util.concurrent.TimeUnit;
 public class OkHttpUtils {
 
     private OkHttpClient client = new OkHttpClient.Builder()
-            .connectTimeout(60, TimeUnit.SECONDS)
-            .readTimeout(60, TimeUnit.SECONDS)
+            .connectTimeout(10,TimeUnit.SECONDS)
+            .readTimeout(15, TimeUnit.SECONDS)
+            .writeTimeout(15, TimeUnit.MILLISECONDS)
             .build();
-
 
     public String getPTHomeHtml(String bfdate, String efdate) {
         String url = "http://143.80.1.92:8267/SearchResult.aspx?k=0";

@@ -28,9 +28,9 @@ public class ReptileCurrentIFS {
     public JSONObject spiderInfo() {
         JSONObject json = new JSONObject();
         try {
-            if (redisUtil.get("Reptile" + ipConfiguration.getPort()).toString().equals("0")) {
+            if (Integer.parseInt(redisUtil.get("Reptile" + ipConfiguration.getPort()).toString()) > 1) {
                 json.put("status", false);
-                json.put("data", "没有爬虫启动");
+                json.put("data", "有多个爬虫启动");
                 return json;
             }
         } catch (Exception e) {
@@ -39,11 +39,7 @@ public class ReptileCurrentIFS {
             json.put("data", "没有爬虫启动");
             return json;
         }
-        if (Integer.parseInt(redisUtil.get("Reptile" + ipConfiguration.getPort()).toString()) > 1) {
-            json.put("status", false);
-            json.put("data", "有多个爬虫启动");
-            return json;
-        }
+
         Map data = redisUtil.hmget(String.valueOf(ipConfiguration.getPort()));
         json.put("status", true);
         json.put("data", ifs.getData(data));
