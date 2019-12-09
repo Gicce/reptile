@@ -49,8 +49,8 @@ public class Application implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        motto.start();
 //        pkuLawPt.startup();
 //        pkulawJX.status();
-        motto.start();
     }
 }

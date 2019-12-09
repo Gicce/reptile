@@ -6,9 +6,7 @@ import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.jandar.file.Application;
 import com.jandar.file.entity.ContentPkulawV1;
 import com.jandar.file.tool.CalendarUtils;
-import com.jandar.file.utils.OkHttpUtils;
-import com.jandar.file.utils.PkulawContent;
-import com.jandar.file.utils.SqlUtils;
+import com.jandar.file.utils.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
@@ -61,11 +59,16 @@ public class PkuLawPt {
     private PkulawContent content;
     @Autowired
     private OkHttpUtils okHttpUtils;
+    @Autowired
+    private RedisUtil redisUtil;
+    @Autowired
+    private IpConfiguration ipConfiguration;
 
 
     public void startup() {
         Logger log = LoggerFactory.getLogger(Application.class);
         log.info("法宝-开始发布任务");
+        final int PORT = ipConfiguration.getPort();
         int total = Integer.parseInt(createThreadSize + processThreadSize);
         BlockingQueue<String> smallUrlQueue = new LinkedBlockingDeque<>();
 
@@ -81,15 +84,24 @@ public class PkuLawPt {
         int offsetPage = Integer.parseInt(Pattern.compile("[^0-9]").matcher(data.get("title")).replaceAll("")) / 40 + 1;
         //开始页数
         int startPage;
-
         if (StringUtils.isNotEmpty(pageSize)) {
             startPage = Integer.parseInt(pageSize);
         } else {
             startPage = 0;
         }
-
         //结束页
         int endPage = offsetPage;
+        Map<Object, Object> result = new HashMap<>();
+        result.put("allDataCount", Pattern.compile("[^0-9]").matcher(data.get("title")).replaceAll(""));
+        result.put("startTime", String.valueOf(System.currentTimeMillis()));
+        result.put("threadPoolSize", String.valueOf(total));
+        result.put("proxyUseRate", "1");
+        if (redisUtil.hasKey(String.valueOf(PORT))) {
+            redisUtil.del(String.valueOf(PORT));
+            redisUtil.hmset(String.valueOf(PORT), result);
+        } else {
+            redisUtil.hmset(String.valueOf(PORT), result);
+        }
         PageThread.PageCallback pageCallback = (inStartPage, inEndPage, inSmallUrlQueue) -> {
             int currentPage = inStartPage;
             try {
@@ -121,6 +133,7 @@ public class PkuLawPt {
         Runnable processThread = () -> {
             try {
                 while (true) {
+                    List<ContentPkulawV1> contentPkulawV1s = new ArrayList<>();
                     if (createThreadEnd.get() == Integer.parseInt(createThreadSize) && smallUrlQueue.isEmpty()) {
                         log.info("完事~");
                         break;
@@ -131,10 +144,7 @@ public class PkuLawPt {
                     } else {
                         String url = smallUrlQueue.poll();
                         if (url != null) {
-                            List<JSONObject> contentPkulawHtml = new ArrayList<>();
-                            List<ContentPkulawV1> contentPkulawV1s = new ArrayList<>();
-                            contentPkulawV1s.add(content.contentPkulawV1s(content.getContent(contentPkulawHtml, okHttpUtils.getHTml(url), url)));
-                            sqlUtils.insertHtml(contentPkulawHtml);
+                            contentPkulawV1s.add(content.contentPkulawV1s(content.getContent(okHttpUtils.getHTml(url), url)));
                             sqlUtils.insertList(contentPkulawV1s);
                             log.info("处理URL:{},队列剩余:{}", url, smallUrlQueue.size());
                         }

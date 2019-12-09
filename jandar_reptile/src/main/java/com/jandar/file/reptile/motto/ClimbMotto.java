@@ -39,6 +39,9 @@ public class ClimbMotto {
     private final String MOTTO_URL = "https://www.geyanw.com/";
 
     public void start() {
+        if (redisUtil.hasKey("successCount" + ipConfiguration.getPort())) {
+            redisUtil.del("successCount" + ipConfiguration.getPort());
+        }
         final int PORT = ipConfiguration.getPort();
         log.info("格言网爬虫启动,地址:{}", "https://www.geyanw.com/");
         redisUtil.incr("Reptile" + PORT, 1);
@@ -56,10 +59,16 @@ public class ClimbMotto {
         //总线程数
         int total = createSize + processSize;
         Map<Object, Object> result = new HashMap<>();
-        result.put("allDataCount", "0");
+        result.put("allDataCount", "1");
+        result.put("startTime", String.valueOf(System.currentTimeMillis()));
         result.put("threadPoolSize", String.valueOf(total));
         result.put("proxyUseRate", "1");
-        redisUtil.hmset(String.valueOf(PORT), result);
+        if (redisUtil.hasKey(String.valueOf(PORT))) {
+            redisUtil.del(String.valueOf(PORT));
+            redisUtil.hmset(String.valueOf(PORT), result);
+        } else {
+            redisUtil.hmset(String.valueOf(PORT), result);
+        }
         redisUtil.set("mottoCallback", "1");
         ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("in-thread-%d").build();
         ExecutorService mulThreadPools = new ThreadPoolExecutor(processSize, processSize, 0,

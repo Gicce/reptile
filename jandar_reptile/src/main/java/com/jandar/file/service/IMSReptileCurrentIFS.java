@@ -8,7 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.DecimalFormat;
 import java.util.Map;
 
 /**
@@ -38,13 +37,16 @@ public class IMSReptileCurrentIFS {
      * @return
      */
     public Map getData(Map<Object, Object> map) {
+        int port = ipConfiguration.getPort();
         int tableNumber = sqlUtils.ReturnRows();
+        int allData = Integer.parseInt(map.get("allDataCount").toString());
         map.put("allSaveCount", tableNumber);
-        map.put("todayCount", redisUtil.getScore("reptileData" + ipConfiguration.getPort(), calendarUtils.getMMDD()));
-        map.put("allWaitCount", getAllWaitCount(map));
+        map.put("todayCount", redisUtil.getScore("reptileData" + port, calendarUtils.getMMDD()));
+        map.put("successCount", redisUtil.get("successCount" + port));
+        map.put("allWaitCount", getAllWaitCount(allData));
         map.put("crawlRate", getCrawlRate());
-        map.put("dataRate", getDataRate(map));
-        map.put("waitTime", getWaitTime(getAllWaitCount(map)));
+//        map.put("dataRate", getDataRate(allData));
+        map.put("waitTime", getWaitTime(allData));
         return map;
     }
 
@@ -54,14 +56,13 @@ public class IMSReptileCurrentIFS {
      *
      * @return
      */
-    private Integer getAllWaitCount(Map<Object, Object> map) {
-        int alldata = Integer.parseInt(map.get("allDataCount").toString());
-        if (alldata == 0) {
+    private Integer getAllWaitCount(int allData) {
+        if (allData == 1) {
             log.error("无法计算总数据.");
             return 1;
         }
         int allSaveCount = new Double(redisUtil.getZsetScoreSum("reptileData" + ipConfiguration.getPort())).intValue();
-        return alldata - allSaveCount;
+        return allData - allSaveCount;
     }
 
     /**
@@ -82,29 +83,33 @@ public class IMSReptileCurrentIFS {
     }
 
     /**
-     * 完成百分比
-     * 保留到.00
-     *
-     * @return
-     */
-    public String getDataRate(Map<Object, Object> map) {
-        double alldata = Integer.parseInt(map.get("allDataCount").toString());
-        if (alldata == 0) {
-            log.error("无法计算总数据.");
-            return "未知";
-        }
-        double replietData = redisUtil.getZsetScoreSum("reptileData" + ipConfiguration.getPort());
-        DecimalFormat df = new DecimalFormat("#.00");
-        return df.format((replietData / alldata) * 100);
-    }
-
-    /**
      * 预计结束时间
      * 总量-当前数据/24小时数据
      *
      * @return
      */
     public int getWaitTime(int WaitCount) {
-        return WaitCount / getCrawlRate();
+        if (WaitCount == 1) {
+            return 1;
+        }
+        return (WaitCount - Integer.parseInt(redisUtil.get("successCount" + ipConfiguration.getPort()).toString())) / getCrawlRate();
     }
+
+    //
+//    /**
+//     * 完成百分比
+//     * 保留到.00
+//     *
+//     * @return
+//     */
+//    public String getDataRate(int allData) {
+//        double alldata = allData;
+//        if (alldata == 0) {
+//            log.error("无法计算总数据.");
+//            return "0";
+//        }
+//        double replietData = redisUtil.getZsetScoreSum("reptileData" + ipConfiguration.getPort());
+//        DecimalFormat df = new DecimalFormat("#.00");
+//        return df.format((replietData / alldata) * 100);
+//    }
 }

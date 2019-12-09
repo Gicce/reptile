@@ -248,8 +248,9 @@ public class PkulawContent {
         }
     }
 
-    public JSONObject getContent(List<JSONObject> list, String html, String url) {
+    public JSONObject getContent(String html, String url) {
         try {
+            List<JSONObject> list = new ArrayList<>();
             JSONObject json = new JSONObject();
             if (StringUtils.isNotBlank(html)) {
                 Element document = Jsoup.parse(html);
@@ -269,6 +270,7 @@ public class PkulawContent {
                 json.put("id", id);
                 json.put("url", url);
                 list.add(json);
+                sqlUtils.insertHtml(list);
             } else {
                 log.error("html 为空", html);
             }

@@ -84,6 +84,7 @@ public class HtmlUtils {
             mottos.put("type_two", type_two);
             mottos.put("content", content.MatcherON_getString(item.html(), "[、.^(?!0)(?:[0-9]{1,3}|1000)$]"));
             list.add(mottos);
+            redisUtil.incr("successCount" + ipConfiguration.getPort(), 1);
             redisUtil.incrementScore("reptileData" + ipConfiguration.getPort(), calendarUtils.getMMDD(), 1);
         });
 
