@@ -1,7 +1,6 @@
 package com.jandar.file.reptile.pkulaw;
 
 
-import com.alibaba.fastjson.JSONObject;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.jandar.file.Application;
 import com.jandar.file.entity.ContentPkulawV1;
@@ -18,15 +17,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.regex.Pattern;
 
 /**
@@ -130,10 +123,10 @@ public class PkuLawPt {
             startPage += offsetPage;
             endPage += offsetPage;
         }
+        Queue<ContentPkulawV1> contentPkulawV1s = new LinkedList<>();
         Runnable processThread = () -> {
             try {
                 while (true) {
-                    List<ContentPkulawV1> contentPkulawV1s = new ArrayList<>();
                     if (createThreadEnd.get() == Integer.parseInt(createThreadSize) && smallUrlQueue.isEmpty()) {
                         log.info("完事~");
                         break;
@@ -145,7 +138,8 @@ public class PkuLawPt {
                         String url = smallUrlQueue.poll();
                         if (url != null) {
                             contentPkulawV1s.add(content.contentPkulawV1s(content.getContent(okHttpUtils.getHTml(url), url)));
-                            sqlUtils.insertList(contentPkulawV1s);
+                            sqlUtils.insertList((List<ContentPkulawV1>) contentPkulawV1s.poll());
+                            redisUtil.incr("successCount" + ipConfiguration.getPort(), 1);
                             log.info("处理URL:{},队列剩余:{}", url, smallUrlQueue.size());
                         }
                     }
