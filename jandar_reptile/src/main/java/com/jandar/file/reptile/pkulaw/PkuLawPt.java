@@ -138,8 +138,11 @@ public class PkuLawPt {
                         String url = smallUrlQueue.poll();
                         if (url != null) {
                             contentPkulawV1s.add(content.contentPkulawV1s(content.getContent(okHttpUtils.getHTml(url), url)));
-                            sqlUtils.insertList((List<ContentPkulawV1>) contentPkulawV1s.poll());
+                            List<ContentPkulawV1> list = Collections.singletonList(contentPkulawV1s.poll());
+                            sqlUtils.insertList(list);
                             redisUtil.incr("successCount" + ipConfiguration.getPort(), 1);
+                            redisUtil.incr("everyDayData" + ipConfiguration.getPort(), 1);
+                            redisUtil.incrementScore("reptileData" + ipConfiguration.getPort(), calendarUtils.getMMDD(), 1);
                             log.info("处理URL:{},队列剩余:{}", url, smallUrlQueue.size());
                         }
                     }

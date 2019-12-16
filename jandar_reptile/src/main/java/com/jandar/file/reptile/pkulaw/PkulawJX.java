@@ -140,10 +140,8 @@ public class PkulawJX {
                     if (!smallUrlQueue.isEmpty()) {
                         String url = smallUrlQueue.poll();
                         if (url != null) {
-                            List<JSONObject> contentPkulawHtml = new ArrayList<>();
                             List<ContentPkulawV1> contentPkulawV1s = new ArrayList<>();
-                            contentPkulawV1s.add(content.contentPkulawV1s(content.getContent(contentPkulawHtml, okHttpUtils.getHTml(url), url)));
-                            sqlUtils.insertHtml(contentPkulawHtml);
+                            contentPkulawV1s.add(content.contentPkulawV1s(content.getContent(okHttpUtils.getHTml(url), url)));
                             sqlUtils.insertList(contentPkulawV1s);
                             log.info("处理URL:{},队列剩余:{}", url, smallUrlQueue.size());
                         }
