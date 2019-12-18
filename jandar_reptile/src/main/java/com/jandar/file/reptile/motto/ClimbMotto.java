@@ -30,7 +30,7 @@ public class ClimbMotto {
     @Autowired
     private OkHttpUtils okHttpUtils;
     @Autowired
-    private HtmlUtils htmlUtils;
+    private AnalyzeHtml analyzeHtml;
     @Autowired
     private RedisUtil redisUtil;
     @Autowired
@@ -81,8 +81,8 @@ public class ClimbMotto {
             try {
                 AtomicInteger mottoPage = new AtomicInteger(0);
                 while (true) {
-                    String htmlList = okHttpUtils.getMottoHtml(url + htmlUtils.getUrl(url) + mottoPage.addAndGet(1) + ".html");
-                    if (htmlUtils.analyseHtml(htmlList, inSmallUrlQueue)) {
+                    String htmlList = okHttpUtils.getMottoHtml(url + analyzeHtml.getUrl(url) + mottoPage.addAndGet(1) + ".html");
+                    if (analyzeHtml.analyseHtml(htmlList, inSmallUrlQueue)) {
 
                         log.info("当前队列:{}", inSmallUrlQueue.size());
                     } else {
@@ -110,7 +110,7 @@ public class ClimbMotto {
                     if (!smallUrlQueue.isEmpty()) {
                         String url = smallUrlQueue.poll();
                         if (url != null) {
-                            htmlUtils.analysisData(okHttpUtils.getMottoHtml(url));
+                            analyzeHtml.analysisData(okHttpUtils.getMottoHtml(url));
                             log.info("处理URL:{},队列剩余:{}", url, smallUrlQueue.size());
                         }
                     } else {
@@ -125,7 +125,7 @@ public class ClimbMotto {
             }
         };
 
-        htmlUtils.analysisMottoHtml(mottoHtml).forEach(item -> {
+        analyzeHtml.analysisMottoHtml(mottoHtml).forEach(item -> {
             String html = MOTTO_URL + item.substring(1);
             proDukTionPools.execute(new MottoThread(html, smallUrlQueue, mottoCallback));
         });

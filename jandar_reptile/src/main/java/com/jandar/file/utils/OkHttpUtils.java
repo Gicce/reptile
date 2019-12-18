@@ -173,7 +173,7 @@ public class OkHttpUtils {
                     .build();
             Call call = client.newCall(request);
             Response response = call.execute();
-            return response.body() != null ? response.body().string() : null;
+            return response.body() != null ? response.body().string() : "null";
         } catch (Exception e) {
             log.error("页面请求报错: " + e.toString());
             return "";

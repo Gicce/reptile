@@ -5,13 +5,13 @@ import com.jandar.file.entity.ContentPkulawV1;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
+import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 
 @Slf4j
@@ -122,6 +122,38 @@ public class SqlUtils {
         } catch (Exception e) {
             e.printStackTrace();
             return 0;
+        }
+    }
+
+    /**
+     * 单个插入html，并返回id
+     *
+     * @param html
+     * @param updateTime
+     * @return
+     */
+    public int insertAppleHtml(String html, String updateTime) {
+        final String sql = "INSERT INTO " + ContentTable + " (html,update_time) VALUES (?,?);";
+        KeyHolder keyHolder = new GeneratedKeyHolder();
+        PkulawDataUtils.getJdbcTemplate().update(new PreparedStatementCreator() {
+            @Override
+            public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+                PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+                ps.setString(1, html);
+                ps.setString(2, updateTime);
+                return ps;
+            }
+        }, keyHolder);
+        return keyHolder.getKey().intValue();
+    }
+
+    public String getAppleNowHtml(String id) {
+        String sql = "SELECT html FROM " + ContentTable + " WHERE id=" + id + ";";
+        try {
+            return PkulawDataUtils.getJdbcTemplate().queryForObject(sql, String.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "null";
         }
     }
 

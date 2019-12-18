@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
  **/
 @Service
 @Slf4j
-public class HtmlUtils {
+public class AnalyzeHtml {
     @Autowired
     private PkulawContent content;
     @Autowired
@@ -37,6 +37,16 @@ public class HtmlUtils {
     private RedisUtil redisUtil;
     @Autowired
     private IpConfiguration ipConfiguration;
+
+    /**
+     * 过滤html
+     */
+    private final String regEx_html = "<[^>]+>";
+    /**
+     * 过滤空格、换行符
+     */
+    private final String rn_html = "\\s*|\t|\r|\n|&nbsp;";
+    private final String special = "\\&[a-zA-Z]{1,10};";
 
     public List<String> analysisMottoHtml(String html) {
         Element motto = Jsoup.parse(html);
@@ -126,5 +136,62 @@ public class HtmlUtils {
         } else {
             return false;
         }
+    }
+
+    /**
+     * 过滤html 标签 /R/N 空格
+     *
+     * @param html
+     * @return
+     */
+    public String filterHtml(String html) {
+        Matcher filterHtml = Pattern.compile(regEx_html, Pattern.CASE_INSENSITIVE).matcher(html);
+        String filterHtmls = filterHtml.replaceAll("");
+        Matcher filterSTRN = Pattern.compile(rn_html, Pattern.CASE_INSENSITIVE).matcher(filterHtmls);
+        String p_html = filterSTRN.replaceAll("");
+        Matcher p_special = Pattern.compile(special, Pattern.CASE_INSENSITIVE).matcher(p_html);
+        return p_special.replaceAll("");
+    }
+
+    /**
+     * 解析apple 页面
+     *
+     * @param html
+     */
+    public void analyseHtml(String html) {
+        Element body = Jsoup.parse(html);
+        Elements divs = body.select("div.cell");
+        Elements boxs = body.select("table");
+        divs.forEach(item -> {
+            log.info(filterHtml(item.html()));
+
+        });
+        List<Map<String, String>> mapList = new ArrayList<>();
+
+        boxs.forEach(item -> {
+            item.select("tr").forEach(tr -> {
+                Map<String, String> data = new HashMap<>();
+                data.put("modelName", tr.select("td.model-name").text());
+                for (int i = 0; i < tr.select("td.price-cell").size(); i++) {
+                    data.put("priceCell" + i, tr.select(".price-cell").get(i).text());
+                }
+                data.put("timeAgo", tr.select("td.time-ago").text());
+                mapList.add(data);
+            });
+        });
+//        boxs.forEach(item -> {
+//           Elements elements =  item.select("tr.pmi-0 > th");
+//            for (Element element : item.select("td.model-name")) {
+//                 log.info(element.text());
+//            }
+//            for (int i = 0; i < elements.size(); i++) {
+//                log.info(item.select("td.price-cell").get(i).text());
+//            }
+//            for (Element element : item.select("td.time-ago")) {
+//                log.info(element.text());
+//            }
+//        });
+
+
     }
 }

@@ -1,5 +1,6 @@
 package com.jandar.file;
 
+import com.jandar.file.reptile.apple.AppleTuanRepilt;
 import com.jandar.file.reptile.motto.ClimbMotto;
 import com.jandar.file.reptile.pkulaw.*;
 import com.jandar.file.utils.SqlUtils;
@@ -46,10 +47,13 @@ public class Application implements ApplicationRunner {
     private PkulawBD bd;
     @Autowired
     private SqlUtils sqlUtils;
+    @Autowired
+    private AppleTuanRepilt apple;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        motto.start();
+        apple.startup();
+//        motto.start();
 //        pkuLawPt.startup();
 //        pkulawJX.status();
     }
