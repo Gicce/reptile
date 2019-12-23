@@ -6,7 +6,6 @@ import com.jandar.file.reptile.pkulaw.*;
 import com.jandar.file.utils.SqlUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -35,26 +34,29 @@ public class Application implements ApplicationRunner {
     @Value("${pageSize}")
     private String pageSize;
 
-    @Autowired
-    private PkuLawPt pkuLawPt;
-    @Autowired
-    private PkulawJX pkulawJX;
-    @Autowired
-    private ClimbMotto motto;
-    @Autowired
-    private PkulawJX jx;
-    @Autowired
-    private PkulawBD bd;
-    @Autowired
-    private SqlUtils sqlUtils;
-    @Autowired
-    private AppleTuanRepilt apple;
+    private final PkuLawPt pkuLawPt;
+    private final PkulawJX pkulawJX;
+    private final ClimbMotto motto;
+    private final PkulawJX jx;
+    private final PkulawBD bd;
+    private final SqlUtils sqlUtils;
+    private final AppleTuanRepilt apple;
+
+    public Application(PkuLawPt pkuLawPt, PkulawJX pkulawJX, ClimbMotto motto, PkulawJX jx, PkulawBD bd, SqlUtils sqlUtils, AppleTuanRepilt apple) {
+        this.pkuLawPt = pkuLawPt;
+        this.pkulawJX = pkulawJX;
+        this.motto = motto;
+        this.jx = jx;
+        this.bd = bd;
+        this.sqlUtils = sqlUtils;
+        this.apple = apple;
+    }
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        apple.startup();
+//        apple.startup();
 //        motto.start();
-//        pkuLawPt.startup();
+        pkuLawPt.startup();
 //        pkulawJX.status();
     }
 }

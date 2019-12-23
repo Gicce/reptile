@@ -39,171 +39,13 @@ public class PkulawContent {
     private final String rn_html = "\\s*|\t|\r|\n|&nbsp;";
     private final String special = "\\&[a-zA-Z]{1,10};";
 
-//    public List<ContentPkulawV1> contentPkulawV1s(JSONObject object) {
-//        Long id = object.getLong("id");
-//        String sourceUrl = object.getString("url");
-//        String caseName = object.getString("title");
-//        String caseCode = object.getString("case_code");
-//        String caseDb = object.getString("type");
-//        String pubDate = object.getString("pub_date");
-//        ContentPkulawV1 pkulawV1 = new ContentPkulawV1();
-//        List<ContentPkulawV1> list = new ArrayList<>();
-//        if (StringUtils.isNotBlank(id.toString())) {
-//            log.info("案件Id ：" + id);
-//            pkulawV1.setId(id);
-//        }
-//        if (StringUtils.isNotBlank(sourceUrl)) {
-//            log.info("案件连接地址 sourceUrl :" + sourceUrl);
-//            pkulawV1.setSourceUrl(sourceUrl);
-//        }
-//        if (StringUtils.isNotBlank(caseName)) {
-//            log.info("案件标题 caseName：" + caseName);
-//            pkulawV1.setCaseName(caseName);
-//        }
-//        if (StringUtils.isNotBlank(caseCode)) {
-//            log.info("案件字号 caseCode：" + caseCode);
-//            pkulawV1.setCaseCode(caseCode);
-//        }
-//        if (StringUtils.isNotBlank(caseDb)) {
-//            log.info("案件分类 caseDb：" + caseDb);
-//            pkulawV1.setCaseDb(caseDb);
-//        }
-//        if (StringUtils.isNotBlank(pubDate)) {
-//            log.info("案件审结日期 ClosingDate ：" + pubDate);
-//            pkulawV1.setClosingDate(pubDate);
-//        }
-//        String contentHtml = object.getString("content_html");
-//        if (StringUtils.isNotBlank(contentHtml)) {
-//            Matcher filter_html = Pattern.compile(regEx_html, Pattern.CASE_INSENSITIVE).matcher(contentHtml);
-//            String filterHtml = filter_html.replaceAll("");
-//            Matcher filterSTRN = Pattern.compile(rn_html, Pattern.CASE_INSENSITIVE).matcher(filterHtml);
-//            String p_html = filterSTRN.replaceAll("");
-//            Matcher p_special = Pattern.compile(special, Pattern.CASE_INSENSITIVE).matcher(p_html);
-//            String htmlText = p_special.replaceAll("");
-//            //获取案由分类
-//            Matcher type = Pattern.compile("(?<=案由分类】).*?(?=【)").matcher(htmlText);
-//            while (type.find()) {
-//                if (StringUtils.isNotBlank(type.group())) {
-//                    log.info("案由分类：" + type.group());
-//                    pkulawV1.setCaseType(type.group());
-//                }
-//            }
-//            //获取文书类型
-//            Matcher instrumentType = Pattern.compile("(?<=文书类型】).*?(?=【)").matcher(htmlText);
-//            while (instrumentType.find()) {
-//                if (StringUtils.isNotBlank(instrumentType.group())) {
-//                    log.info("文书类型：" + instrumentType.group());
-//                    pkulawV1.setInstrumentType(instrumentType.group());
-//                }
-//            }
-//            //获取审理法院
-//            Matcher trialCourt = Pattern.compile("(?<=审理法院】).*?(?=【)").matcher(htmlText);
-//            while (trialCourt.find()) {
-//                if (StringUtils.isNotBlank(trialCourt.group())) {
-//                    log.info("审理法院：" + trialCourt.group());
-//                    pkulawV1.setTrialCourt(trialCourt.group());
-//                }
-//            }
-//            //获取审理程序
-//            Matcher trialProcedure = Pattern.compile("(?<=审理程序】).*?(?=【)").matcher(htmlText);
-//            while (trialProcedure.find()) {
-//                if (StringUtils.isNotBlank(trialProcedure.group())) {
-//                    log.info("审理程序：" + trialProcedure.group());
-//                    pkulawV1.setTrialProcedure(trialProcedure.group());
-//                }
-//            }
-//            //获取案件情节
-//            Matcher casePlot = Pattern.compile("(?<=案件情节】).*?(?=【)").matcher(htmlText);
-//            while (casePlot.find()) {
-//                if (StringUtils.isNotBlank(casePlot.group())) {
-//                    log.info("案件情节：" + casePlot.group());
-//                    pkulawV1.setCasePlot(casePlot.group());
-//                }
-//            }
-//            //获取判决结果
-//            Matcher judgmentResult = Pattern.compile("(?<=判决结果】).*?(?=【)").matcher(htmlText);
-//            while (judgmentResult.find()) {
-//                if (StringUtils.isNotBlank(judgmentResult.group())) {
-//                    log.info("判决结果：" + judgmentResult.group());
-//                    pkulawV1.setJudgmentResult(judgmentResult.group());
-//                }
-//            }
-//            //获取判定罪名
-//            Matcher judgingCrime = Pattern.compile("(?<=判定罪名】).*?(?=【)").matcher(htmlText);
-//            while (judgingCrime.find()) {
-//                if (StringUtils.isNotBlank(judgingCrime.group())) {
-//                    log.info("判定罪名：" + judgingCrime.group());
-//                    pkulawV1.setJudgingCrime(judgingCrime.group());
-//                }
-//            }
-//            //获取刑罚
-//            Matcher penalty = Pattern.compile("(?<=刑罚】).*?(?=【)").matcher(htmlText);
-//            while (penalty.find()) {
-//                if (StringUtils.isNotBlank(penalty.group())) {
-//                    log.info("刑罚：" + penalty.group());
-//                    pkulawV1.setPenalty(penalty.group());
-//                }
-//            }
-//            //获取审理法官
-//            Matcher trialJudge = Pattern.compile("(?<=审理法官】).*?(?=【)").matcher(htmlText);
-//            while (trialJudge.find()) {
-//                if (StringUtils.isNotBlank(trialJudge.group())) {
-//                    log.info("审理法官：" + trialJudge.group());
-//                    pkulawV1.setTrialJudge(trialJudge.group());
-//                }
-//            }
-//            //获取发布日期
-//            Matcher releaseDate = Pattern.compile("(?<=发布日期】).*?(?=【)").matcher(htmlText);
-//            while (releaseDate.find()) {
-//                if (StringUtils.isNotBlank(releaseDate.group())) {
-//                    log.info("发布日期：" + releaseDate.group());
-//                    pkulawV1.setReleaseDate(releaseDate.group());
-//                }
-//            }
-//            //获取案例特征
-//            Matcher caseCharacteristics = Pattern.compile("(?<=案例特征】).*?(?=【)").matcher(htmlText);
-//            while (caseCharacteristics.find()) {
-//                if (StringUtils.isNotBlank(caseCharacteristics.group())) {
-//                    log.info("案例特征：" + caseCharacteristics.group());
-//                    pkulawV1.setCaseCharacteristics(caseCharacteristics.group());
-//                }
-//            }
-//            //获取裁决机构
-//            Matcher adjudicationOrg = Pattern.compile("(?<=裁决机构】).*?(?=【)").matcher(htmlText);
-//            while (adjudicationOrg.find()) {
-//                if (StringUtils.isNotBlank(adjudicationOrg.group())) {
-//                    log.info("裁决机构：" + adjudicationOrg.group());
-//                    pkulawV1.setAdjudicationOrg(adjudicationOrg.group());
-//                }
-//            }
-//            //获取裁决日期
-//            Matcher adjudicationDate = Pattern.compile("(?<=裁决日期】).*?(?=【)").matcher(htmlText);
-//            while (adjudicationDate.find()) {
-//                if (StringUtils.isNotBlank(adjudicationDate.group())) {
-//                    log.info("裁决日期：" + adjudicationDate.group());
-//                    pkulawV1.setAdjudicationDate(adjudicationDate.group());
-//                }
-//            }
-//            //获取内容
-//            Matcher fullText = Pattern.compile("(?<=全文】).*").matcher(htmlText);
-//            while (fullText.find()) {
-//                if (StringUtils.isNotBlank(fullText.group())) {
-//                    log.info("全文：" + fullText.group());
-//                    pkulawV1.setFullText(fullText.group());
-//                }
-//            }
-//            list.add(pkulawV1);
-//        }
-//        return list;
-//    }
-
     /**
      * 解析url中的hmlt并插入
      *
      * @param html
      * @return
      */
-    public void getUrl(String html, BlockingQueue<String> smallUrlQueue) {
+    public void getUrl(String html, Queue<String> smallUrlQueue) {
         try {
             if (StringUtils.isNotBlank(html)) {
                 Element doc = Jsoup.parse(html);
@@ -250,7 +92,6 @@ public class PkulawContent {
 
     public JSONObject getContent(String html, String url) {
         try {
-            List<JSONObject> list = new ArrayList<>();
             JSONObject json = new JSONObject();
             if (StringUtils.isNotBlank(html)) {
                 Element document = Jsoup.parse(html);
@@ -269,10 +110,9 @@ public class PkulawContent {
                 json.put("type", type);
                 json.put("id", id);
                 json.put("url", url);
-                list.add(json);
-                sqlUtils.insertHtml(list);
+                sqlUtils.insertHtml(json);
             } else {
-                log.error("html 为空", html);
+                log.error("html 为空 {}", html);
             }
             return json;
         } catch (Exception e) {

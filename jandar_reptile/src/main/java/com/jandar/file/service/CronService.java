@@ -8,11 +8,9 @@ import com.jandar.file.utils.SqlUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import org.springframework.test.context.jdbc.Sql;
 
 
 @Component
@@ -22,25 +20,27 @@ public class CronService {
     @Value("${url.request}")
     private String url;
 
-    @Autowired
-    private RedisUtil redisUtil;
-    @Autowired
-    private IpConfiguration ipConfiguration;
-    @Autowired
-    private CalendarUtils calendarUtils;
-    @Autowired
-    private OkHttpUtils okHttpUtils;
-    @Autowired
-    private SqlUtils sqlUtils;
+    private final RedisUtil redisUtil;
+    private final IpConfiguration ipConfiguration;
+    private final CalendarUtils calendarUtils;
+    private final OkHttpUtils okHttpUtils;
+    private final SqlUtils sqlUtils;
 
-    //        @Scheduled(cron = "0 0 0-23 * * ? ")
-    @Scheduled(cron = "1 * * * * ?")
-    public void everydayData() {
-        redisUtil.set("everyDayData" + ipConfiguration.getPort(), "0");
+    public CronService(RedisUtil redisUtil, IpConfiguration ipConfiguration, CalendarUtils calendarUtils, OkHttpUtils okHttpUtils, SqlUtils sqlUtils) {
+        this.redisUtil = redisUtil;
+        this.ipConfiguration = ipConfiguration;
+        this.calendarUtils = calendarUtils;
+        this.okHttpUtils = okHttpUtils;
+        this.sqlUtils = sqlUtils;
     }
 
-//    @Scheduled(cron = "0 0 0 * * ?")
-    @Scheduled(cron = "1 * * * * ?")
+//    @Scheduled(cron = "1 * * * * ?")
+    public void everydayData() {
+        redisUtil.set("everyDayDataout" + ipConfiguration.getPort(), "0");
+        redisUtil.set("everyDayData" + ipConfiguration.getPort(), redisUtil.get("everyDayDataout" + ipConfiguration.getPort()).toString());
+    }
+
+//    @Scheduled(cron = "1 * * * * ?")
     public void getAppleHtml() {
         String html = okHttpUtils.getHTml(url);
         if (!html.equals("null")) {

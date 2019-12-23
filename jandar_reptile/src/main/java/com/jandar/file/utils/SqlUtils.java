@@ -6,7 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Service;
@@ -25,30 +24,29 @@ public class SqlUtils {
     @Value("${libraryName}")
     private String LibraryName;
 
+    private final JdbcConnection jdbcConnection;
+
+    public SqlUtils(JdbcConnection jdbcConnection) {
+        this.jdbcConnection = jdbcConnection;
+    }
+
     /**
      * 数据库insert 插入
      *
      * @param
      * @return
      */
-    public synchronized int[] insertHtml(List<JSONObject> objects) {
+    public synchronized int[] insertHtml(JSONObject document) {
         String sql = "insert into " + HtmlTable + " (id,html,type) SELECT ?,?,? FROM DUAL WHERE NOT EXISTS(select id from " + HtmlTable + " where id=? )";
-        int[] result = PkulawDataUtils.getJdbcTemplate().batchUpdate(sql, new BatchPreparedStatementSetter() {
-            @Override
-            public void setValues(PreparedStatement preparedStatement, int i) throws SQLException {
-                JSONObject document = objects.get(i);
-                preparedStatement.setString(1, document.getString("id"));
-                preparedStatement.setString(2, document.getString("content_html"));
-                preparedStatement.setString(3, document.getString("type"));
-                preparedStatement.setString(4, document.getString("id"));
-            }
-
-            @Override
-            public int getBatchSize() {
-                return objects.size();
-            }
-        });
-        return result;
+        int success = jdbcConnection.getJdbcTemplate().update(sql,
+                document.getString("id"),
+                document.getString("content_html"),
+                document.getString("type"),
+                document.getString("id"));
+        if (success != 1) {
+            log.error("数据已存在！,插入失败");
+        }
+        return null;
     }
 
     /**
@@ -57,9 +55,9 @@ public class SqlUtils {
      * @param contentPkulaw
      * @return
      */
-    public synchronized int[] insertList(List<ContentPkulawV1> contentPkulaw) {
+    public synchronized int insertList(List<ContentPkulawV1> contentPkulaw) {
         String sql = "insert into " + ContentTable + " (id,case_name,case_type,case_code,Instrument_type,closing_date,trial_court,trial_procedure,case_plot,judgment_result,judging_crime,penalty,trial_judge,release_date,case_characteristics,adjudication_org,adjudication_date,full_text,source_url,case_db) SELECT ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,? FROM DUAL WHERE NOT EXISTS(SELECT id FROM " + ContentTable + " WHERE id = ?)";
-        int[] result = PkulawDataUtils.getJdbcTemplate().batchUpdate(sql, new BatchPreparedStatementSetter() {
+        int[] result = jdbcConnection.getJdbcTemplate().batchUpdate(sql, new BatchPreparedStatementSetter() {
             @Override
             public void setValues(PreparedStatement preparedStatement, int i) throws SQLException {
                 ContentPkulawV1 contentPkulawV1 = contentPkulaw.get(i);
@@ -91,12 +89,18 @@ public class SqlUtils {
                 return contentPkulaw.size();
             }
         });
-        return result;
+        int success = 0;
+        for (int i : result) {
+            if (i == 1) {
+                success++;
+            }
+        }
+        return success;
     }
 
     public synchronized int[] insertMottoList(List<JSONObject> list) {
         String sql = "insert into " + ContentTable + " (type_one,type_two,content,sequence,release_time,create_time) value (?,?,?,'0',?,SYSDATE());";
-        int[] result = PkulawDataUtils.getJdbcTemplate().batchUpdate(sql, new BatchPreparedStatementSetter() {
+        int[] result = jdbcConnection.getJdbcTemplate().batchUpdate(sql, new BatchPreparedStatementSetter() {
             @Override
             public void setValues(PreparedStatement preparedStatement, int i) throws SQLException {
                 JSONObject jsonObject = list.get(i);
@@ -118,7 +122,7 @@ public class SqlUtils {
     public int ReturnRows() {
         String sql = "select table_rows from information_schema.tables where table_schema='" + LibraryName + "' AND table_name = '" + ContentTable + "';";
         try {
-            return PkulawDataUtils.getJdbcTemplate().queryForObject(sql, Integer.class);
+            return jdbcConnection.getJdbcTemplate().queryForObject(sql, Integer.class);
         } catch (Exception e) {
             e.printStackTrace();
             return 0;
@@ -135,7 +139,7 @@ public class SqlUtils {
     public int insertAppleHtml(String html, String updateTime) {
         final String sql = "INSERT INTO " + ContentTable + " (html,update_time) VALUES (?,?);";
         KeyHolder keyHolder = new GeneratedKeyHolder();
-        PkulawDataUtils.getJdbcTemplate().update(new PreparedStatementCreator() {
+        jdbcConnection.getJdbcTemplate().update(new PreparedStatementCreator() {
             @Override
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
                 PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -150,10 +154,20 @@ public class SqlUtils {
     public String getAppleNowHtml(String id) {
         String sql = "SELECT html FROM " + ContentTable + " WHERE id=" + id + ";";
         try {
-            return PkulawDataUtils.getJdbcTemplate().queryForObject(sql, String.class);
+            return jdbcConnection.getJdbcTemplate().queryForObject(sql, String.class);
         } catch (Exception e) {
             e.printStackTrace();
             return "null";
+        }
+    }
+
+    public Integer sqlGetCount() {
+        String sql = "select count(*) from " + ContentTable + "; ";
+        try {
+            return jdbcConnection.getJdbcTemplate().queryForObject(sql, Integer.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
         }
     }
 

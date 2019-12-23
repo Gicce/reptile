@@ -7,10 +7,12 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 
-@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
-@SpringBootApplication
+@SpringBootApplication(exclude = {
+        DataSourceAutoConfiguration.class
+})
 @EnableScheduling
 public class FileApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(FileApplication.class, args);
     }
